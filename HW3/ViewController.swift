@@ -16,6 +16,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //   > MY CODE IS BELOW <
+
+
         print("String Easy. Task 1")
         print("My name has \(lettersCount(myNameIs: "Alex")) characters")
         print("==========================================")
@@ -25,13 +28,99 @@ class ViewController: UIViewController {
         user(name: "Alex", lastName: "Bes")
         print("==========================================")
 
+
         print("String Easy. Task 3")
         let nameAndMidleName = "Александр КонстантиновИч"
         manOrWoman(name: nameAndMidleName)
+        print("==========================================")
+
+
+        //      Collections Easy: Задание 1
+        //      Создать массив со значениями типа Int. Выполнить удаление всех элементов массива.
+        print("Collections Easy. TASK 1")
+        var someArray = [4, 5, 10, 14]
+        someArray = []
+        print("someArray is empty: \(someArray)")
+        print("=========================")
+
+
+        //      Collections Easy: Задание 2
+        //      Создать 2 массива со значениями типа Int. Сделать соединение данных массивов. Результат вывести в консоль.
+
+        print("Collections Easy. TASK 2")
+
+        let firstArray = [5, 10, 12, 167,77]
+        let secondArray = [123, 33, 47, 88]
+        let associationArrays = firstArray + secondArray
+
+        print(associationArrays)
+        print("=========================")
+
+
+        //      Collections Easy: Задание 3
+        //      Создать массив с любыми значениями типа строка(во viewDidLoad()). Создать метод который будет принимать как аргумент массив. Метод должен выводить в консоль элементы массива (по одному в одной строке)
+
+        print("Collections Easy. TASK 3")
+
+        let someArrayStrings = ["Mike", "John", "Jessica", "Dave"]
+
+        printNames(elementsOf: someArrayStrings)
+        print("=========================")
+
+
+        //      Collections Easy: Задание 4
+        //      Создать массив с любыми значениями типа строка. Создать метод который будет принимать как аргумент массив. Метод должен возвращать массив который состоит из первого и последнего элемента массива, который был параметром
+
+        print("Collections Easy. TASK 4")
+
+        let cities = ["Kiev", "Berlin", "London", "Rome"]
+
+        print(firstAndLast(array: cities))
+        print("=========================")
+
+
+        //      Collections Easy: Задание 5
+        //      Создать словарь в котором ключ будет Строкой а значение Целым. Например ключ - имя, значение - возраст. Должно быть 3 элемента (3 пары).
+        //      Добавить в данный словарь еще 2 новых элемента.
+
+        print("Collections Easy. TASK 5")
+
+        var nameAndAge = ["Neo": 27, "Rick": 24, "Jessica": 21]
+
+        nameAndAge["Criss"] = 33
+        nameAndAge["Brian"] = 22
+        print(nameAndAge)
+        print("=========================")
+
+
+        //      Collections Easy: Задание 6
+        //      Создать словарь в котором ключ будет Строкой а значение Целым. Например ключ - имя, значение - возраст. Должно быть 3 элемента (3 пары).
+        //      Создать метод который будет иметь 2 параметра: словарь (типа “Строка : Целое”) и ключ типа Строка. Данный метод должен удалить из полученного (как первый аргумент) словаря элемент ключ которого был передан (как второй аргумент).
+        //      Например: передаваемый словарь будет такой:
+        //          ["Max": 1, "Dasha": 2, "Sergey": 3]
+        //      И если передать второй аргумент "Sergey", то метод должен удалить элемент из передаваемого массива с ключом "Sergey".
+
+        print("Collections Easy. TASK 6")
+
+        let namesAndYears = ["Max": 20, "Harris": 24, "Alex": 22]
+
+        deleteElementIn(someDictionary: namesAndYears, deleteElement: "Harris")
+        print("=========================")
+
+
+        //  > MY CODE IS ABOVE <
+
+//      UNDER CONSTRUCTION
+//        print("String Hard. Task 1")
+//        let nameLastName = "AlexandrBeskopylnyi"
+//
+//        print("==========================================")
+
     }
 
 
-//      Дополнительное задание
+
+    //  > MY METHODS: <
 
     //    Block 1. String Easy. Task 1
     //    Создать строку со своим именем. Написать метод который получает это имя и возвращает кол-во символов в строке с вашим именем. Возвращенное значение показать в консоль
@@ -69,5 +158,64 @@ print(name.lowercased(), lastName.lowercased(), separator: "_")
     }
 
 
+
+    //      Collections Easy: Задание 3
+    //      Создать массив с любыми значениями типа строка(во viewDidLoad()). Создать метод который будет принимать как аргумент массив. Метод должен выводить в консоль элементы массива (по одному в одной строке)
+
+    func printNames (elementsOf: [String]) {
+        for names in elementsOf {
+            print(names)
+        }
+    }
+
+
+    //      Collections Easy: Задание 4
+    //      Создать массив с любыми значениями типа строка. Создать метод который будет принимать как аргумент массив. Метод должен возвращать массив который состоит из первого и последнего элемента массива, который был параметром
+
+    func firstAndLast (array: [String]) -> [String] {
+        let newArray = [array.first!] + [array.last!]
+        return newArray
+    }
+
+
+    //      Collections Easy: Задание 6
+    //      Создать словарь в котором ключ будет Строкой а значение Целым. Например ключ - имя, значение - возраст. Должно быть 3 элемента (3 пары).
+    //      Создать метод который будет иметь 2 параметра: словарь (типа “Строка : Целое”) и ключ типа Строка. Данный метод должен удалить из полученного (как первый аргумент) словаря элемент ключ которого был передан (как второй аргумент).
+    //      Например: передаваемый словарь будет такой:
+    //          ["Max": 1, "Dasha": 2, "Sergey": 3]
+    //      И если передать второй аргумент "Sergey", то метод должен удалить элемент из передаваемого массива с ключом "Sergey".
+
+    func deleteElementIn (someDictionary: [String: Int], deleteElement: String)  {
+
+        var newDict = someDictionary
+        newDict [deleteElement] = nil
+        print (newDict)
+
+    }
+
+
+
+
+
+
+//      UNDER CONSTRUCTION
+//    String Hard: Task 1
+//    Создать метод который будет принимать строку где слитно написано Ваши ИмяФамилия “TungFam" и возвращать строку,  где они будут разделены пробелом
+//    input = “TungFam”
+//    output = “Tung Fam"
+//    Сложность задачи в том, что имя может быть любое. Например:
+//    Введя “ArtemPigor” должно вернуть “Artem Pigor”
+//    Введя “AnnaSecure” должно вернуть “Anna Secure”
+//    Введя “BlaCar” должно вернуть “Bla Car”
+//    То есть алгоритм разбивает два слова которые начинаются на большую букву
+
+
+//    func upgrade (name: String) -> String {
+//        let upgradedName = name
+//        if upgradedName.contains(String.uppercased(<#T##String#>))
+//
+//    }
+
+//  > MY METHODS: <
 }
 
