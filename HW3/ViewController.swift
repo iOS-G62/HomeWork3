@@ -20,7 +20,7 @@ class ViewController: UIViewController {
 
 
         print("String Easy. Task 1")
-        print("My name has \(lettersCount(myNameIs: "Alex")) characters")
+        print("My name has \(lettersCount(inName: "Alex")) characters")
         print("==========================================")
 
 
@@ -30,8 +30,8 @@ class ViewController: UIViewController {
 
 
         print("String Easy. Task 3")
-        let nameAndMidleName = "Александр КонстантиновИч"
-        manOrWoman(name: nameAndMidleName)
+        let nameAndMiddleName = "Александр КонстантиновИч"
+        manOrWoman(name: nameAndMiddleName)
         print("==========================================")
 
 
@@ -110,11 +110,6 @@ class ViewController: UIViewController {
 
         //  > MY CODE IS ABOVE <
 
-//      UNDER CONSTRUCTION
-//        print("String Hard. Task 1")
-//        let nameLastName = "AlexandrBeskopylnyi"
-//
-//        print("==========================================")
 
     }
 
@@ -126,31 +121,34 @@ class ViewController: UIViewController {
     //    Создать строку со своим именем. Написать метод который получает это имя и возвращает кол-во символов в строке с вашим именем. Возвращенное значение показать в консоль
 
 
-    let myNameIs = ""
+    let inName = ""
 
-    func lettersCount(myNameIs: String) -> Int {
+    func lettersCount(inName: String) -> Int {
 
-        return myNameIs.count
+        return inName.count
     }
 
 
 //      String Easy. Task 2
 //      Написать метод который принимает 2 слова, например имя и фамилию, возвращает юзернейм который имеет буквы нижнего регистра и разделяет имя и фамилию символом “_”
 
-
-    func user(name: String, lastName: String) {
-print(name.lowercased(), lastName.lowercased(), separator: "_")
+    func user(name: String, lastName: String) -> () {
+        func userName () {
+            print(name.lowercased(), lastName.lowercased(), separator: "_")
+        }
+        return userName()
     }
+
 
 //      String Easy. Task 3
 //      Создать строку с именем и своим отчеством. Создать метод который проверит его на окончание “ич/на”. Выводит “М” или “Ж” в зависимости от окончания. Также учитывать регистр букв, то есть ИЧ или Ич или На и тд.
 //      Подсказка: в классе написан метод который позволяет проверить на суффикс или префикс, найдите и используйте его
 
     func manOrWoman(name: String) {
-        let someString = name.lowercased()
-        if someString.hasSuffix("ич") {
+        let fullName = name.lowercased()
+        if fullName.hasSuffix("ич") {
             print("Man")
-        } else if someString.hasSuffix("на") {
+        } else if fullName.hasSuffix("на") {
             print("Woman")
         } else {
             print("It hasn't middle name")
@@ -172,8 +170,9 @@ print(name.lowercased(), lastName.lowercased(), separator: "_")
     //      Collections Easy: Задание 4
     //      Создать массив с любыми значениями типа строка. Создать метод который будет принимать как аргумент массив. Метод должен возвращать массив который состоит из первого и последнего элемента массива, который был параметром
 
+
     func firstAndLast (array: [String]) -> [String] {
-        let newArray = [array.first!] + [array.last!]
+       let newArray = [array.first  ?? "There is no elements in array"] + [array.last ?? "There is no elements in array"]
         return newArray
     }
 
@@ -188,34 +187,10 @@ print(name.lowercased(), lastName.lowercased(), separator: "_")
     func deleteElementIn (someDictionary: [String: Int], deleteElement: String)  {
 
         var newDict = someDictionary
-        newDict [deleteElement] = nil
+        newDict[deleteElement] = nil
         print (newDict)
 
     }
-
-
-
-
-
-
-//      UNDER CONSTRUCTION
-//    String Hard: Task 1
-//    Создать метод который будет принимать строку где слитно написано Ваши ИмяФамилия “TungFam" и возвращать строку,  где они будут разделены пробелом
-//    input = “TungFam”
-//    output = “Tung Fam"
-//    Сложность задачи в том, что имя может быть любое. Например:
-//    Введя “ArtemPigor” должно вернуть “Artem Pigor”
-//    Введя “AnnaSecure” должно вернуть “Anna Secure”
-//    Введя “BlaCar” должно вернуть “Bla Car”
-//    То есть алгоритм разбивает два слова которые начинаются на большую букву
-
-
-//    func upgrade (name: String) -> String {
-//        let upgradedName = name
-//        if upgradedName.contains(String.uppercased(<#T##String#>))
-//
-//    }
-
 //  > MY METHODS: <
 }
 
